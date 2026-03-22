@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side C-World | Saurabh Kushwaha Vision</title>
+    <style>
+        /* CSS Logic */
+        body {
+            background-color: #0d1117; 
+            color: #58a6ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .dashboard {
+            border: 2px solid #238636;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(22, 27, 34, 0.9);
+            box-shadow: 0 0 30px #238636;
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        h1 { color: #ffffff; margin-bottom: 10px; }
+        .owner { color: #8b949e; font-style: italic; margin-bottom: 20px; }
+        
+        .status-box {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #30363d;
+        }
+
+        .siddham {
+            color: #3fb950;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        #mars-temp { color: #f78166; font-size: 1.5rem; font-weight: bold; }
+
+        .logic-ticker {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            padding: 10px;
+            color: #d2a8ff;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <h1>SIDE C-WORLD</h1>
+        <div class="owner">by Sourav Kushwaha | Jhansi</div>
+
+        <div class="status-box">
+            <p>Project Status: <span class="siddham">SIDDHAM (सिद्धम)</span></p>
+        </div>
+
+        <div class="status-box">
+            <p>Live Mars Tracking:</p>
+            <div id="mars-temp">Loading...</div>
+        </div>
+
+        <div class="logic-ticker" id="logic-ticker">
+            Logic Key: 123456789
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const marsTempElement = document.getElementById('mars-temp');
+            const logicTicker = document.getElementById('logic-ticker');
+
+            // मंगल ग्रह का रीयल-टाइम तापमान सिमुलेशन
+            function updateMarsData() {
+                // मंगल का औसत तापमान -125 से 0 के बीच रहता है
+                const temp = Math.floor(Math.random() * (0 - (-125) + 1)) + (-125);
+                marsTempElement.innerText = `${temp}°C`;
+            }
+
+            // हर 3 सेकंड में अपडेट करें
+            setInterval(updateMarsData, 3000);
+            updateMarsData();
+
+            console.log("Side C-World: Logic 123456789 Active.");
+        });
+    </script>
+</body>
+</html>
